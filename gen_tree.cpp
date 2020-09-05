@@ -1,10 +1,10 @@
-// #pragma once
+#pragma once
 #include<bits/stdc++.h>
 using namespace std;
 
 struct Node {
     int data;
-    Node *left, *right;
+    Node *left, *right, *nextSibling;
 
     Node(int x){
         data = x;
@@ -65,12 +65,12 @@ void inot(Node *node){
     inot(node->right);
 }
 
-int main(){
-    Node *tree = BuildTree("1 2 3 4 6 N 7 N N N 5 8 9");
-    preot(tree);
-    cout << endl;
-    inot(tree);
-    cout << endl;
-    posot(tree);
-    cout << endl;
-}
+// int main(){
+//     Node *tree = BuildTree("1 2 3 4 6 N 7 N N N 5 8 9");
+//     preot(tree);
+//     cout << endl;
+//     inot(tree);
+//     cout << endl;
+//     posot(tree);
+//     cout << endl;
+// }
