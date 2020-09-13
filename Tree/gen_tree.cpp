@@ -1,17 +1,10 @@
-#pragma once
-#include<bits/stdc++.h>
-using namespace std;
+#include"tree.h"
 
-struct Node {
-    int data;
-    Node *left, *right, *nextSibling;
-
-    Node(int x){
-        data = x;
-        left = NULL;
-        right = NULL;
-    }
-};
+Node::Node(int x){
+    data = x;
+    left = NULL;
+    right = NULL;
+}
 
 Node *BuildTree(string seq){
     //fill queue
@@ -64,13 +57,3 @@ void inot(Node *node){
     cout << node->data << " ";
     inot(node->right);
 }
-
-// int main(){
-//     Node *tree = BuildTree("1 2 3 4 6 N 7 N N N 5 8 9");
-//     preot(tree);
-//     cout << endl;
-//     inot(tree);
-//     cout << endl;
-//     posot(tree);
-//     cout << endl;
-// }
