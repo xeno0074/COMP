@@ -13,4 +13,6 @@ Node *BuildTree(string);
 void preot(Node *);
 void posot(Node *);
 void inot(Node *);
+
 string ToString(Node *);
+Node *DuplicateTree(Node *, int = 0);

@@ -8,5 +8,8 @@ int main(){
     cout << endl;
     posot(tree);
     cout << endl;
-    cout << ToString(tree) << endl;
+    cout << endl;
+    cout << ToString(tree) << "\n"
+        << ToString(DuplicateTree(tree, 5)) << "\n"
+        << ToString(tree) << "\n";
 }

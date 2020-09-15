@@ -18,6 +18,6 @@ int NumBSTs(int n){
 
 int main(){
     for(int i = 1; i <= 10; i++)
-        cout << NumBSTs(i) << endl;
+        cout << i << " -> " << NumBSTs(i) << endl;
     return 0;
 }
