@@ -1,7 +1,7 @@
 #include"tree.h"
 
 int main(){
-    Node *tree = BuildTree("1 2 3 4 6 N 7 N N N 5 8 9");
+    Node *tree = BuildTree("5 3 8 1 4 6 9 N 2 N N N 7 N N N N N N");
     preot(tree);
     cout << endl;
     inot(tree);
