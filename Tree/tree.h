@@ -4,10 +4,13 @@ using namespace std;
 
 struct Node {
     int data;
+    int &val = data;
     Node *left, *right, *nextSibling;
 
     Node(int);
 };
+
+typedef Node TreeNode;
 
 Node *BuildTree(string);
 void preot(Node *);
