@@ -8,30 +8,27 @@ Node::Node(int x){
 
 Node *BuildTree(string seq){
     //fill queue
-    vector<int> stream;
+    vector<string> stream;
     stringstream ss(seq);
     string word;
-    int num;
     while(getline(ss, word, ' ')){
-        if(word == "N") num = -1;
-        else num = stoi(word);
-        stream.push_back(num);
+        stream.push_back(word);
     }
     //use queue to build
     queue<Node **> q;
     //first node
-    int temp = stream[0];
+    int temp = stoi(stream[0]);
     stream.erase(stream.begin());
     Node *tree = new Node(temp);
     q.push(&(tree->left)); q.push(&(tree->right));
     //rest nodes
-    for(int x: stream){
-        if(x == -1){
+    for(string x: stream){
+        if(x == "N"){
             q.pop();
             continue;
         }
         Node **npp = q.front(); q.pop();
-        *npp = new Node(x);
+        *npp = new Node(stoi(x));
         q.push(&((*npp)->left));
         q.push(&((*npp)->right));
     }
