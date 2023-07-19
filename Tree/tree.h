@@ -1,13 +1,13 @@
 #pragma once
-#include<bits/stdc++.h>
+#include <string>
 using namespace std;
 
 struct Node {
-    int data;
-    int &val = data;
-    Node *left, *right, *nextSibling;
+  int data;
+  int &val = data;
+  Node *left, *right, *nextSibling;
 
-    Node(int);
+  Node(int);
 };
 
 typedef Node TreeNode;

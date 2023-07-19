@@ -1,36 +1,38 @@
-#include"tree.h"
+#include "tree.h"
+#include <queue>
 
-bool IsLeaf(Node *node){
+namespace tree_tree_to_string {
+  bool IsLeaf(Node *node) {
     return !node->left && !node->right;
-}
+  }
 
-string ToStr(int n){
+  string ToStr(int n) {
     string str = "";
-    while(n){
-        char c = char(n % 10) + '0';
-        str = &c + str;
-        n /= 10;
+    while (n) {
+      char c = char(n % 10) + '0';
+      str = &c + str;
+      n /= 10;
     }
     return str;
-}
+  }
 
-string ToString(Node *root){
+  string ToString(Node *root) {
     string str = "";
     queue<Node *> q;
     q.push(root);
-    while(!q.empty()){
-        Node *t = q.front();
-        q.pop();
-        
-        if(!t) str += " N";
-        else if(IsLeaf(t)){
-            str += " " + ToStr(t->data);
-        }
-        else{
-            str += " " + ToStr(t->data);
-            q.push(t->left);
-            q.push(t->right);
-        }
+    while (!q.empty()) {
+      Node *t = q.front();
+      q.pop();
+
+      if (!t) str += " N";
+      else if (IsLeaf(t)) {
+        str += " " + ToStr(t->data);
+      } else {
+        str += " " + ToStr(t->data);
+        q.push(t->left);
+        q.push(t->right);
+      }
     }
     return str.substr(1);
-}
+  }
+}// namespace tree_tree_to_string
